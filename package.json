@@ -1,0 +1,33 @@
+{
+    "name": "event-router",
+    "version": "0.0.1",
+    "description": "A simple system for managing events in different contexts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sebastae/event-router.git"
+    },
+    "keywords": [
+        "event",
+        "events",
+        "router",
+        "manager"
+    ],
+    "author": "Sebastian Ellefsen",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/sebastae/event-router/issues"
+    },
+    "homepage": "https://github.com/sebastae/event-router#readme",
+    "devDependencies": {
+        "@types/jest": "^27.4.0",
+        "jest": "^27.4.7",
+        "ts-jest": "^27.1.3",
+        "typescript": "^4.5.5"
+    }
+}
