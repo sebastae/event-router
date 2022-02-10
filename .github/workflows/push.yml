@@ -8,8 +8,25 @@ jobs:
     bump-version:
       name: Automatic Version Bump
       runs-on: ubuntu-latest
-      uses: phips28/gh-action-bump-version@v9.0.1
-      env: 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        path-wording: 'fix, fixes, patch'
+      
+      steps:
+        - name: 'Checkout source'
+          uses: 'actions/checkout@v2'
+          with:
+            ref: ${{ github.ref }}
+        - name: 'cat package'
+          run: cat ./package.json
+        - name: 'Automatic version bump'
+          id: version-bump
+          uses: 'phips28/gh-action-bump-version@v9.0.1'
+          env: 
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            path-wording: 'fix, fixes, patch'
+            tag-prefix: 'v'
+        - name: 'cat package'
+          run: cat ./package.json
+        - name: 'Output'
+          env:
+            NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
+          run: echo "new tag $NEW_TAG"
