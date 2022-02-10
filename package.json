@@ -1,6 +1,6 @@
 {
     "name": "event-router",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A simple system for managing events in different contexts",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
